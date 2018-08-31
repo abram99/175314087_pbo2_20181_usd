@@ -17,15 +17,11 @@ public class pasien {
     private String noRekamMedis, nama, alamat, tempatLahir;
     private int tanggalKelahiran, tanggalLahir, bulanLahir, tahunLahir;
 
-    /**
-     *
-     * @param tanggalLahir
-     * @throws java.lang.Exception
-     */
     
     public pasien (){
         
     }
+    
     public void setTanggalLahir(int tanggalLahir) throws Exception {
 
         if (tanggalLahir > 0 && tanggalLahir < 32) {
