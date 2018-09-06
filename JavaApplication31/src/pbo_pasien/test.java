@@ -11,54 +11,76 @@ package pbo_pasien;
  */
 public class test {
     public static void main(String[] args) throws Exception {
-        pasien abram = new pasien();
-        dokter dok = new dokter();
+
+ pasien pasien1 = new pasien();
+ pasien pasien2 = new pasien();
+ dokter dok = new dokter();
+ antrianPasien antri = new antrianPasien();
+ klinik kl = new klinik();
+ try{
+     pasien1.setNama("MUCHA");
+     pasien1.setTempatLahir("MAKASSAR");
+     pasien1.setTanggalLahir(27);
+     pasien1.setBulanLahir(9);
+     pasien1.setTahunLahir(1994);
+     pasien1.setAlamat("BONE_BONE");
+     
+     pasien2.setNama("RENSU");
+     pasien2.setTempatLahir("PAKEM");
+     pasien2.setTanggalLahir(7);
+     pasien2.setBulanLahir(7);
+     pasien2.setTahunLahir(1999);
+     pasien2.setAlamat("BUSUR");
+     
+     dok.setNama("BOYKE");
+     dok.setAlamat("KUTAI BARAT");
+     dok.setNomorPegawai("175314087");
+     dok.setTempatLahir("DAMAI");
+     dok.setTanggalLahir(2);
+     dok.setBulanLahir(8);
+     dok.setTahunLahir(1966);
+     
+     antri.mendaftar(pasien1);
+     antri.mendaftar(pasien2);
+     antri.setKlinik(kl);
+     
+     kl.setId_klinik("KLK21");
+     kl.setNama("KLINIK PURAI NGERIMAN");
+ 
+ }catch (Exception ex){
+     System.out.println(ex);
+ }
+        System.out.println(antri.getKlinik().getNama());  
+        System.out.println("ID KLINIK : " + antri.getKlinik().getId_klinik());
+        System.out.println("");
         
-        abram.setNama("ABRAM");
-        abram.setAlamat("KUTAI BARAT");
-        abram.setTempatLahir("DAMAI");
-        
-        dok.setNama("DOKTER RIA");
-        dok.setNomorPegawai("175314087");
-        dok.setAlamat("BARONG TONGKOK");
-        dok.setTempatLahir("YOGYAKARTA");
-        
-        System.out.println("DATA PASIEN ");
-        System.out.println("NAMA                : " + abram.getNama());
-        System.out.print("NO REKAM MEDIS      : " );
-        try{
-            abram.setTahunLahir(1999);
-            abram.setBulanLahir(9);
-            abram.setTanggalLahir(27);
-            abram.setNoRekamMedis("ABR");
-            abram.getKode();
-//            System.out.print("NO REKAM MEDIS : " );
-            System.out.print(abram.getNoRekamMedis());
+        for (int i = 0; i < antri.getDaftar_pasien().size(); i++) {
+            antri.tanggal_antrian();
+            System.out.println("PASIEN NO URUT KE- " + (i+1) + " : " + antri.getDaftar_pasien().get(i).getNama());
+            System.out.println(" ");
+            System.out.println("DATA PASIEN");
+            System.out.println("=================================");
+            System.out.println("NAMA PASIEN \t : " + antri.getDaftar_pasien().get(i).getNama());
+            System.out.println("TEMPAT LAHIR \t : " + antri.getDaftar_pasien().get(i).getTempatLahir());
+            System.out.print("TANGGAL LAHIR  \t : ");
+            antri.getDaftar_pasien().get(i).getTanggalKelahiran();
+            System.out.println("ALAMAT  \t : " + antri.getDaftar_pasien().get(i).getAlamat());
+            System.out.println("NO REKAM MEDIS\t : " + antri.getDaftar_pasien().get(i).NoRekamMedis());
             System.out.println("");
-            System.out.print("TANGGAL KELAHIRAN   : ");
-            abram.getTanggalKelahiran();
-            System.out.println("ALAMAT              : " + abram.getAlamat());
-            System.out.println("TEMPAT LAHIR        : " + abram.getTempatLahir());
-            System.out.println("====================================================");
-        }catch (Exception ex){
-            System.out.println(ex);
+            System.out.println("DATA DOKTER");
+            System.out.println("=================================");
+            System.out.println("NAMA DOKTER \t : " + dok.getNama());
+            System.out.println("NOMOR PEGAWAI \t : ");
+            System.out.println("TEMPAT LAHIR \t : " + dok.getTempatLahir());
+            System.out.print("TANGGAL LAHIR \t : ");
+            dok.getKelahiran();
+            System.out.println("ALAMAT DOKTER \t : " + dok.getAlamat());
+            System.out.println("");
+            
+            
+            
             
         }
-        System.out.println("DATA DOKTER");
-        System.out.println("NAMA                : " + dok.getNama());
-        System.out.println("NO PEGAWAI          : " + dok.getNomorPegawai());
-        System.out.println("ALAMAT              : " + dok.getAlamat());
-        try {
-            dok.setTanggalLahir(7);
-            dok.setBulanLahir(7);
-            dok.setTahunLahir(1999);
-            System.out.print("TANGGAL LAHIR       : " );
-            dok.getKelahiran();
-        }catch (Exception ex){
-            System.out.println(ex);
-        }
-        
-        
         
         
         
