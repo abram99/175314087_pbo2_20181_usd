@@ -23,6 +23,18 @@ public class dokter {
      */
     private int tanggalLahir, bulanLahir, tahunLahir;
 
+    public dokter(String nomorPegawai, String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir) {
+        this.nomorPegawai = nomorPegawai;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.tempatLahir = tempatLahir;
+        this.tanggalLahir = tanggalLahir;
+        this.bulanLahir = bulanLahir;
+        this.tahunLahir = tahunLahir;
+    }
+
+    
+
     /**
      * ,,
      *

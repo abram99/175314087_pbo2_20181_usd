@@ -14,7 +14,7 @@ public class test {
 
  pasien pasien1 = new pasien();
  pasien pasien2 = new pasien();
- dokter dok = new dokter();
+ dokter dok = new dokter("175314087", "BOYKE","KUBAR","DAMAI",27,10,1999);
  antrianPasien antri = new antrianPasien();
  klinik kl = new klinik();
  try{
@@ -31,14 +31,6 @@ public class test {
      pasien2.setBulanLahir(7);
      pasien2.setTahunLahir(1999);
      pasien2.setAlamat("BUSUR");
-     
-     dok.setNama("BOYKE");
-     dok.setAlamat("KUTAI BARAT");
-     dok.setNomorPegawai("175314087");
-     dok.setTempatLahir("DAMAI");
-     dok.setTanggalLahir(2);
-     dok.setBulanLahir(8);
-     dok.setTahunLahir(1966);
      
      antri.mendaftar(pasien1);
      antri.mendaftar(pasien2);
@@ -70,7 +62,7 @@ public class test {
             System.out.println("DATA DOKTER");
             System.out.println("=================================");
             System.out.println("NAMA DOKTER \t : " + dok.getNama());
-            System.out.println("NOMOR PEGAWAI \t : ");
+            System.out.println("NOMOR PEGAWAI \t : "+ dok.getNomorPegawai());
             System.out.println("TEMPAT LAHIR \t : " + dok.getTempatLahir());
             System.out.print("TANGGAL LAHIR \t : ");
             dok.getKelahiran();
