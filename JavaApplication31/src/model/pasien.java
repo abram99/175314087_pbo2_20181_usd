@@ -6,6 +6,7 @@
 package model;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,43 +15,65 @@ import java.util.Date;
  */
 public class pasien {
 
-    private String noRekamMedis, nama, alamat, tempatLahir;
+    private String noRekamMedis, nama, alamat, tempatLahir, nik;
     /**
      *
      * @author acer Mendeklarasikan variabel noRekamMedis, nama, alamat,
      * tempatLahir dgn tipe dataString dan bersifat private
      */
     private int tanggalKelahiran, tanggalLahir, bulanLahir, tahunLahir;
+    
+    public static ArrayList<pasien> daftarPasienKlinik
+            = new ArrayList<pasien>();
+
+    public pasien(String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String nik) {
+        this.noRekamMedis = noRekamMedis;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.tempatLahir = tempatLahir;
+        this.nik = nik;
+        this.tanggalKelahiran = tanggalKelahiran;
+        this.tanggalLahir = tanggalLahir;
+        this.bulanLahir = bulanLahir;
+        this.tahunLahir = tahunLahir;
+    }
 
     /**
      *
-     * @author acer mendeklarasikan variabel dgn tipe data integer, dan variabel tsb bersifat private
+     * @author acer mendeklarasikan variabel dgn tipe data integer, dan variabel
+     * tsb bersifat private
      */
     public pasien() {
         /**
          *
-         * @author acer membuat method (kosong) pasien 
+         * @author acer membuat method (kosong) pasien
          */
     }
 
     public void setTanggalLahir(int tanggalLahir) throws Exception {
         /**
          *
-         * @author acer membuat method setTanggal lahir yg bertujuan agar anda dapat menginput setTanggalLahir dikelas lain, throw exception berfugsi sbg kata kunci, yang berarti kita dapat melempar Exception pd kondisi yg kita tentukan
+         * @author acer membuat method setTanggal lahir yg bertujuan agar anda
+         * dapat menginput setTanggalLahir dikelas lain, throw exception
+         * berfugsi sbg kata kunci, yang berarti kita dapat melempar Exception
+         * pd kondisi yg kita tentukan
          */
         if (tanggalLahir > 0 && tanggalLahir < 32) {
             /**
              *
-             * @author acer jika tanggalLahir lebih dari 0 dan kurang dari 32 maka tanggal lahir yg anda input benar
+             * @author acer jika tanggalLahir lebih dari 0 dan kurang dari 32
+             * maka tanggal lahir yg anda input benar
              */
             this.tanggalLahir = tanggalLahir;
-            
 
         } else {
             throw new Exception("tanggal lahir yang anda masukkan salah");
             /**
              *
-             * @author acer sedangkan jika tanggal lahir yang anda masukkan tdk sesuai format tanggalLahir > 0 && tanggalLahir < 32 maka program akan menampilkan "tanggal lahir yang anda masukkan salah" di output
+             * @author acer sedangkan jika tanggal lahir yang anda masukkan tdk
+             * sesuai format tanggalLahir > 0 && tanggalLahir < 32 maka program
+             * akan menampilkan "tanggal lahir yang anda masukkan salah" di
+             * output
              */
         }
     }
@@ -58,7 +81,9 @@ public class pasien {
     public void getTanggalKelahiran() {
         /**
          *
-         * @author acer membuat method getTanggalKelahiran() yg bertujuan untuk agar anda dapat memanggil method getTanggalKelahiran() dikelas lain(main)
+         * @author acer membuat method getTanggalKelahiran() yg bertujuan untuk
+         * agar anda dapat memanggil method getTanggalKelahiran() dikelas
+         * lain(main)
          */
         Date tanggalKelahiran = new Date(getTahunLahir() - 1900, getBulanLahir() - 1, getTanggalLahir());
         /**
@@ -81,19 +106,25 @@ public class pasien {
     public void setBulanLahir(int bulanLahir) throws Exception {
         /**
          *
-         * @author acer membuat method setBulan lahir bertipe data void yg bertujuan agar anda dpt menginput bulanlahir di kelas lain(main),  throw exception berfugsi sbg kata kunci, yang berarti kita dapat melempar Exception pd kondisi yg kita tentukan
+         * @author acer membuat method setBulan lahir bertipe data void yg
+         * bertujuan agar anda dpt menginput bulanlahir di kelas lain(main),
+         * throw exception berfugsi sbg kata kunci, yang berarti kita dapat
+         * melempar Exception pd kondisi yg kita tentukan
          */
         if (bulanLahir > 0 && bulanLahir < 13) {
             this.bulanLahir = bulanLahir;
             /**
              *
-             * @author acer jika bulan lahir yang anda input > 0 dan < 13 maka data yg anda masukkan benar
+             * @author acer jika bulan lahir yang anda input > 0 dan < 13 maka
+             * data yg anda masukkan benar
              */
         } else {
             throw new Exception("bulan lahir yang anda masukkan salah");
             /**
              *
-             * @author acer sedangkan jika data yg anda masukkan tidak sesuai format bulanLahir > 0 && bulanLahir < 13, maka program akan menampilkan "bulan lahir yang anda masukkan salah" di output
+             * @author acer sedangkan jika data yg anda masukkan tidak sesuai
+             * format bulanLahir > 0 && bulanLahir < 13, maka program akan
+             * menampilkan "bulan lahir yang anda masukkan salah" di output
              */
 
         }
@@ -102,19 +133,25 @@ public class pasien {
     public void setTahunLahir(int tahunLahir) throws Exception {
         /**
          *
-         * @author acer membuat method setTahunLahir dgn tipe data void dan dgn parameter int tahunlahir, throw exception berfugsi sbg kata kunci, yang berarti kita dapat melempar Exception pd kondisi yg kita tentukan
+         * @author acer membuat method setTahunLahir dgn tipe data void dan dgn
+         * parameter int tahunlahir, throw exception berfugsi sbg kata kunci,
+         * yang berarti kita dapat melempar Exception pd kondisi yg kita
+         * tentukan
          */
         if (tahunLahir > 0) {
             this.tahunLahir = tahunLahir;
             /**
              *
-             * @author acer jika tahun lahir yang anda masukkan lebih dari 0 maka data yg anda masukkan benar
+             * @author acer jika tahun lahir yang anda masukkan lebih dari 0
+             * maka data yg anda masukkan benar
              */
         } else {
             throw new Exception("tahun lahir yang anda masukkan salah");
             /**
              *
-             * @author acer sedangkan jika tahun lahir yg anda masukan <=0 maka program akan menampilkan kalimat "tahun lahir yang anda masukkan salah" di output
+             * @author acer sedangkan jika tahun lahir yg anda masukan <=0 maka
+             * program akan menampilkan kalimat "tahun lahir yang anda masukkan
+             * salah" di output
              */
         }
 
@@ -124,7 +161,8 @@ public class pasien {
         this.nama = nama;
         /**
          *
-         * @author acer membuat method setNama dgn tipe data void, bertujuan agar anda dapat menginput nama dikelas lain(main)
+         * @author acer membuat method setNama dgn tipe data void, bertujuan
+         * agar anda dapat menginput nama dikelas lain(main)
          */
     }
 
@@ -132,7 +170,8 @@ public class pasien {
         this.alamat = alamat;
         /**
          *
-         * @author acer membuat method setAlamat dgn tipe data void, bertujuan agar anda dapat menginput alamat dikelas lain(main)
+         * @author acer membuat method setAlamat dgn tipe data void, bertujuan
+         * agar anda dapat menginput alamat dikelas lain(main)
          */
     }
 
@@ -140,7 +179,8 @@ public class pasien {
         this.tempatLahir = tempatLahir;
         /**
          *
-         * @author acer membuat method setTempatLahir dgn tipe data void, bertujuan agar anda dapat menginput tempatlahir dikelas lain(main)
+         * @author acer membuat method setTempatLahir dgn tipe data void,
+         * bertujuan agar anda dapat menginput tempatlahir dikelas lain(main)
          */
     }
 
@@ -159,7 +199,8 @@ public class pasien {
     public String getNoRekamMedis() {
         /**
          *
-         * @author acer membuat method getNoRekamMedis() yg bertujuan agar anda dpt memanggil method getNoRekamMedis() untuk ditampilkan di output
+         * @author acer membuat method getNoRekamMedis() yg bertujuan agar anda
+         * dpt memanggil method getNoRekamMedis() untuk ditampilkan di output
          */
         return noRekamMedis;
         /**
@@ -172,7 +213,8 @@ public class pasien {
     public String getNama() {
         /**
          *
-         * @author acer membuat method getNama() yg bertujuan agar anda dpt memanggil method getNama() untuk ditampilkan di output
+         * @author acer membuat method getNama() yg bertujuan agar anda dpt
+         * memanggil method getNama() untuk ditampilkan di output
          */
         return nama;
         /**
@@ -184,7 +226,8 @@ public class pasien {
     public String getAlamat() {
         /**
          *
-         * @author acer membuat method getAlamat() yg bertujuan agar anda dpt memanggil method getAlamat() untuk ditampilkan di output
+         * @author acer membuat method getAlamat() yg bertujuan agar anda dpt
+         * memanggil method getAlamat() untuk ditampilkan di output
          */
         return alamat;
         /**
@@ -196,7 +239,8 @@ public class pasien {
     public String getTempatLahir() {
         /**
          *
-         * @author acer membuat method getTempatLahir() yg bertujuan agar anda dpt memanggil method getTempatLahir() untuk ditampilkan di output
+         * @author acer membuat method getTempatLahir() yg bertujuan agar anda
+         * dpt memanggil method getTempatLahir() untuk ditampilkan di output
          */
         return tempatLahir;
         /**
@@ -208,7 +252,8 @@ public class pasien {
     public int getTanggalLahir() {
         /**
          *
-         * @author acer membuat method getTanggalLahir() yg bertujuan agar anda dpt memanggil method getTanggalLahir() untuk ditampilkan di output
+         * @author acer membuat method getTanggalLahir() yg bertujuan agar anda
+         * dpt memanggil method getTanggalLahir() untuk ditampilkan di output
          */
         return tanggalLahir;
         /**
@@ -220,9 +265,10 @@ public class pasien {
     public int getBulanLahir() {
         /**
          *
-         * @author acer membuat method getBulanLahir() yg bertujuan agar anda dpt memanggil method getBulanLahir() untuk ditampilkan di output
+         * @author acer membuat method getBulanLahir() yg bertujuan agar anda
+         * dpt memanggil method getBulanLahir() untuk ditampilkan di output
          */
-        return bulanLahir; 
+        return bulanLahir;
         /**
          *
          * @author acer memanggil obj bulanLahir
@@ -232,7 +278,8 @@ public class pasien {
     public int getTahunLahir() {
         /**
          *
-         * @author acer membuat method getTahunLahir() yg bertujuan agar anda dpt memanggil method getTahunLahir() untuk ditampilkan di output
+         * @author acer membuat method getTahunLahir() yg bertujuan agar anda
+         * dpt memanggil method getTahunLahir() untuk ditampilkan di output
          */
         return tahunLahir;
         /**
@@ -241,4 +288,16 @@ public class pasien {
          */
     }
 
+    public static void tambahPasienBaru(pasien test) {
+
+    }
+    public static pasien cariPasien(String string) {
+        // listing cari elemen
+        
+    return null;
+    
+    }
+    public String getNik() {
+        return nik;
+    }
 }
