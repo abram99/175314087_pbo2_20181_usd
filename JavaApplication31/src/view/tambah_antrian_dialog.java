@@ -67,14 +67,14 @@ public class tambah_antrian_dialog extends JDialog implements ActionListener {
         
     }
 
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        if (e.getSource()== no_rm) {
-//            if (pasien.cariPasien(no_rm.getText()) != null) {
-//                nama_text.setText(pasien.cariPasien(no_rm.getText()).getNama());
-//                alamat_text.setText(pasien.cariPasien(no_rm.getText()).getAlamat());
-//            }else{
-//                JOptionPane.showMessageDialog(null, "Nomor rekam medis : " + no_rm.getText() + " tidak ditemukan");
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()== no_rm) {
+            if (pasien.cariPasien(no_rm.getText()) != null) {
+                nama_text.setText(pasien.cariPasien(no_rm.getText()).getNama());
+                alamat_text.setText(pasien.cariPasien(no_rm.getText()).getAlamat());
+            }else{
+                JOptionPane.showMessageDialog(null, "Nomor rekam medis : " + no_rm.getText() + " tidak ditemukan");
                 
                 
             }

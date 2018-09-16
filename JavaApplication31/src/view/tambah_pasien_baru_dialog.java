@@ -35,13 +35,12 @@ public class tambah_pasien_baru_dialog extends JDialog implements ActionListener
         "19", "20", "21", "22", "23", "24", "25", "26", "27",
         "28", "29", "30", "31"};
 
-    private String bulan_larik[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9",
-        "10", "11", "12"};
+    private String bulan_larik[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9","10", "11", "12"};
     
-    private String tahun_larik[]= {"1970", "1971", "1972", "1973", "1974", "1975",
+    private String tahun_larik[]= {"1960","1961","1962","1963","1964","1965","1966","1967","1968","1969","1970", "1971", "1972", "1973", "1974", "1975",
         "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985",
         "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994",
-        "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002"};
+        "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018"};
     
     public tambah_pasien_baru_dialog (){
         init();
@@ -104,7 +103,7 @@ public class tambah_pasien_baru_dialog extends JDialog implements ActionListener
         this.add(tahun_CB);
         
         jenis_kelamin = new JLabel ("Jenis Kelamin");
-        jenis_kelamin.setBounds(80, 300, 100, 30);
+        jenis_kelamin.setBounds(80, 300, 100, 80);
         this.add(jenis_kelamin);
         
         pria = new JRadioButton ("Pria", true);
@@ -112,7 +111,7 @@ public class tambah_pasien_baru_dialog extends JDialog implements ActionListener
         this.add(pria);
         
         perempuan = new JRadioButton ("Perempuan", false);
-        perempuan.setBounds(80, 380, 120, 30);
+        perempuan.setBounds(80, 380, 50, 30);
         this.add(perempuan);
         
         group_button = new ButtonGroup();
