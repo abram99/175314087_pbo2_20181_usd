@@ -8,6 +8,7 @@ package model;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JTextField;
 
 /**
  *
@@ -23,7 +24,7 @@ public class pasien {
      */
     private int tanggalKelahiran, tanggalLahir, bulanLahir, tahunLahir;
     
-    public static ArrayList<pasien> daftarPasienKlinik
+    public static ArrayList<pasien> daftarPasien
             = new ArrayList<pasien>();
 
     public pasien(String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String nik) {
@@ -166,6 +167,11 @@ public class pasien {
          */
     }
 
+    public void setNoRekamMedis(String noRekamMedis) {
+        this.noRekamMedis = noRekamMedis;
+    }
+    
+
     public void setAlamat(String alamat) {
         this.alamat = alamat;
         /**
@@ -289,15 +295,27 @@ public class pasien {
     }
 
     public static void tambahPasienBaru(pasien test) {
+     daftarPasien.add(test);
 
     }
-    public static pasien cariPasien(String string) {
-        // listing cari elemen
+    public static pasien cariPasien(String no_rm) {
+        for (int i = 0; i < daftarPasien.size(); i++) {
+            if (no_rm == null ? daftarPasien.get(i).getNoRekamMedis() == null
+                    : no_rm.equals(daftarPasien.get(i).getNoRekamMedis())){
+                return daftarPasien.get(i);
+                
+            }
+            
+        }
         
     return null;
     
     }
     public String getNik() {
         return nik;
+    }
+
+    public void setNama(JTextField nama) {
+        
     }
 }

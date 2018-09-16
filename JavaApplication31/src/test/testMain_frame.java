@@ -5,6 +5,10 @@
  */
 package test;
 
+import javax.swing.JFrame;
+import javax.swing.JFrame;
+import view.main_frame;
+
 /**
  *
  * @author jarkom
@@ -12,8 +16,9 @@ package test;
 public class testMain_frame {
 
     public static void main(String[] args) {
-        MainFrame test = new MainFrame();
-        test.setSize(300, 400);
+        main_frame test = new main_frame();
+        test.setSize(500, 500);
         test.setVisible(true);
+        test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

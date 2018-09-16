@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package test;
+
+import model.pasien;
 
 /**
  *
@@ -35,8 +37,8 @@ public class test_kelas_pasien {
         pasien.tambahPasienBaru(test);
         pasien.tambahPasienBaru(test1);
         
-        for (int i = 0; i < pasien.daftarPasienKlinik.size(); i++) {
-            System.out.println("Nama : "+pasien.daftarPasienKlinik.get(i).getNama());
+        for (int i = 0; i < pasien.daftarPasien.size(); i++) {
+            System.out.println("Nama : "+pasien.daftarPasien.get(i).getNama());
         }
         
         pasien cari = pasien.cariPasien("19990110");
