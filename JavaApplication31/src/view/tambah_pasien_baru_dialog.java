@@ -103,7 +103,7 @@ public class tambah_pasien_baru_dialog extends JDialog implements ActionListener
         this.add(tahun_CB);
         
         jenis_kelamin = new JLabel ("Jenis Kelamin");
-        jenis_kelamin.setBounds(80, 300, 100, 80);
+        jenis_kelamin.setBounds(80, 280, 50, 30);
         this.add(jenis_kelamin);
         
         pria = new JRadioButton ("Pria", true);
@@ -119,7 +119,7 @@ public class tambah_pasien_baru_dialog extends JDialog implements ActionListener
         group_button.add(perempuan);
         
         simpan = new JButton("Simpan");
-        simpan.setBounds(20, 650, 100, 30);
+        simpan.setBounds(20, 400, 50, 30);
         this.add(simpan);
         simpan.addActionListener(this);
         
