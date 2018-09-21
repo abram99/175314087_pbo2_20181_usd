@@ -79,6 +79,16 @@ public class tambah_antrian_dialog extends JDialog implements ActionListener {
                 
             }
             
+                
+            }
+        if (e.getSource()== simpan) {
+            pasien cari = pasien.cariPasien(no_rm.getText());
+            for (int i = 0; i < pasien.daftarPasien.size(); i++) {
+                JOptionPane.showMessageDialog(null, "Nama Antrian : " + (i+1));
+                this.dispose();
+                
+            }
+                    
         }
     }
     
