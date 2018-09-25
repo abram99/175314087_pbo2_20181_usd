@@ -15,6 +15,8 @@ import java.util.Date;
  */
 public class antrianKlinik {
 
+    
+
     private int tanggal_antri, bulan_antri, tahun_antri;
     private klinik Klinik;
 

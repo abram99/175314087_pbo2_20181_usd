@@ -17,7 +17,7 @@ public class testMain_frame {
 
     public static void main(String[] args) {
         main_frame test = new main_frame();
-        test.setSize(500, 500);
+        test.setSize(520, 500);
         test.setVisible(true);
         test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

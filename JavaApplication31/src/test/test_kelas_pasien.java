@@ -45,3 +45,4 @@ public class test_kelas_pasien {
         System.out.println("Nama Hasil Pencarian = "+cari.getNama());
     }
 }
+       

@@ -11,6 +11,12 @@ package model;
  */
 public class klinik {
 
+    public klinik(String id_klinik, String nama) {
+        this.id_klinik = id_klinik;
+        this.nama = nama;
+    }
+    
+
     public klinik() {
         /**
          *
