@@ -50,76 +50,76 @@ public class tambah_pasien_baru_dialog extends JDialog implements ActionListener
         this.setLayout(null);
         
         judul = new JLabel("Form Tambah Pasien");
-        judul.setBounds(180,30,250,20);
+        judul.setBounds(140,10,200,20);
         this.add(judul);
         
         no_rm = new JLabel("NIK");
-        no_rm.setBounds(20,60,100,30);
+        no_rm.setBounds(20,50,100,50);
         this.add(no_rm);
         
         no_rekam_medis = new JTextField();
-        no_rekam_medis.setBounds(80, 60, 100, 30);
+        no_rekam_medis.setBounds(120,65,200,20);
         this.add(no_rekam_medis);
     
          nama_label = new JLabel("Nama");
-        nama_label.setBounds(20,100,100 ,30);
+        nama_label.setBounds(20,90,100,50);
         this.add(nama_label);
         
         nama = new JTextField();
-        nama.setBounds(80, 100, 100, 30);
+        nama.setBounds(120,105,200,20);
         this.add(nama);
         
         alamat = new JLabel ("Alamat");
-        alamat.setBounds(20, 140, 100, 30);
+        alamat.setBounds(20, 130,100,50);
         this.add(alamat);
         
         alamat_text = new JTextField();
-        alamat_text.setBounds(80, 140, 100, 30);
+        alamat_text.setBounds(120,145,200,20);
         this.add(alamat_text);
         
         
-        tanggal_lahir = new JLabel("Tanggal");
-        tanggal_lahir.setBounds(20, 180, 100, 30);
-        this.add(tanggal_lahir);
-        
-        tanggal_CB = new JComboBox(tanggal_larik);
-        tanggal_CB.setBounds(80, 180, 50, 30);
-        this.add(tanggal_CB);
-        
-        bulan_lahir = new JLabel ("Bulan");
-        bulan_lahir.setBounds(20, 220, 100, 30);
-        this.add(bulan_lahir);
-        
-        bulan_CB = new JComboBox(bulan_larik);
-        bulan_CB.setBounds(80, 220, 50, 30);
-        this.add(bulan_CB);
-        
-        tahun_lahir = new JLabel("Tahun");
-        tahun_lahir.setBounds(20, 260, 100, 30);
-        this.add(tahun_lahir);
-        
-        tahun_CB = new JComboBox(tahun_larik);
-        tahun_CB.setBounds(80, 260, 50, 30);
-        this.add(tahun_CB);
-        
         jenis_kelamin = new JLabel ("Jenis Kelamin");
-        jenis_kelamin.setBounds(80, 280, 50, 30);
+        jenis_kelamin.setBounds(20,165,100,50);
         this.add(jenis_kelamin);
         
         pria = new JRadioButton ("Pria", true);
-        pria.setBounds(80, 340, 50, 30);
+        pria.setBounds(120,180,50,20);
         this.add(pria);
         
         perempuan = new JRadioButton ("Perempuan", false);
-        perempuan.setBounds(80, 380, 50, 30);
+        perempuan.setBounds(120,200,120,20);
         this.add(perempuan);
         
         group_button = new ButtonGroup();
         group_button.add(pria);
         group_button.add(perempuan);
         
+        tanggal_lahir = new JLabel("Tanggal");
+        tanggal_lahir.setBounds(20,230,80,20);
+        this.add(tanggal_lahir);
+        
+        tanggal_CB = new JComboBox(tanggal_larik);
+        tanggal_CB.setBounds(75,230,40,20);
+        this.add(tanggal_CB);
+        
+        bulan_lahir = new JLabel ("Bulan");
+        bulan_lahir.setBounds(120,230,80,20);
+        this.add(bulan_lahir);
+        
+        bulan_CB = new JComboBox(bulan_larik);
+        bulan_CB.setBounds(160,230,40,20);
+        this.add(bulan_CB);
+        
+        tahun_lahir = new JLabel("Tahun");
+        tahun_lahir.setBounds(210,230,80,20);
+        this.add(tahun_lahir);
+        
+        tahun_CB = new JComboBox(tahun_larik);
+        tahun_CB.setBounds(250, 230, 90, 20);
+        this.add(tahun_CB);
+        
         simpan = new JButton("Simpan");
-        simpan.setBounds(20, 400, 50, 30);
+        simpan.setBounds(140, 300, 100, 30);
         this.add(simpan);
         simpan.addActionListener(this);
         
