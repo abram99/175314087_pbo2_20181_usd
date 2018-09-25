@@ -19,7 +19,7 @@ public class klinik {
 
     }
     private String id_klinik, nama;
-
+//
     /**
      *
      * @author acer mendeklarasikan variabel id_klinik dan nama dgn tipe data String dan bersifat private
