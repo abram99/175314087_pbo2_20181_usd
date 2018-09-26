@@ -63,6 +63,9 @@ public class tambah_antrian_dialog extends JDialog implements ActionListener {
         this.add(simpan);
         simpan.addActionListener(this);
         
+        no_rm.addActionListener(this);
+        
+        
         
         
     }
@@ -71,10 +74,14 @@ public class tambah_antrian_dialog extends JDialog implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()== no_rm) {
             if (pasien.cariPasien(no_rm.getText()) != null) {
-                nama_text.setText(pasien.cariPasien(no_rm.getText()).getNama());
-                alamat_text.setText(pasien.cariPasien(no_rm.getText()).getAlamat());
+                pasien cari = pasien.cariPasien(no_rm.getText());
+                if (cari== null){
+                 JOptionPane.showMessageDialog(null, "Data Pasien " + no_rm.getText() + " Tidak Ada");   
+                
             }else{
-                JOptionPane.showMessageDialog(null, "Nomor rekam medis : " + no_rm.getText() + " tidak ditemukan");
+                nama_text.setText(cari.getNama());
+                alamat_text.setText(cari.getAlamat());
+                
                 
                 
             }
@@ -84,12 +91,17 @@ public class tambah_antrian_dialog extends JDialog implements ActionListener {
         if (e.getSource()== simpan) {
             pasien cari = pasien.cariPasien(no_rm.getText());
             for (int i = 0; i < pasien.daftarPasien.size(); i++) {
+                if (cari == pasien.daftarPasien.get(i)) {
+                    
                 JOptionPane.showMessageDialog(null, "Nama Antrian : " + (i+1));
                 this.dispose();
                 
+                }
             }
-                    
+        }
         }
     }
-    
 }
+        
+    
+
