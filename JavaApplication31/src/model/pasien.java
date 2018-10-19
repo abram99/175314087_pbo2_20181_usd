@@ -5,9 +5,15 @@
  */
 package model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTextField;
 
 /**
@@ -318,4 +324,24 @@ public class pasien {
     public void setNama(JTextField nama) {
         
     }
+    
+    public static void simpanDaftarPasien(File file) throws IOException {
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            for (int i = 0; i < daftarPasien.size(); i++) {
+                String data = daftarPasien.get(i).toString();
+                fos.write(data.getBytes());
+            }
+            fos.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(pasien.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+}
+    
+    public String toString(){
+return noRekamMedis+"\t"+nama+"\t"+alamat+"\n";
+}
 }
