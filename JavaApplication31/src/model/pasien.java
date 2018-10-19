@@ -344,4 +344,8 @@ public class pasien {
     public String toString(){
 return noRekamMedis+"\t"+nama+"\t"+alamat+"\n";
 }
+    public static void bacaDaftarPasien(File file) {
+     throw new UnsupportedOperationException("Not supported yet.");
+}
+ 
 }
